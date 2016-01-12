@@ -64,6 +64,22 @@
 (global-set-key "\C-o" 'other-window)
 
 
+;; 特殊文字
+;; http://masutaka.net/chalow/2011-10-12-1.html
+(global-whitespace-mode 1)
+(setq whitespace-style '(face tabs tab-mark spaces space-mark newline newline-mark))
+(setq whitespace-space-regexp "\\(\u3000+\\)")
+(setq whitespace-display-mappings
+  '((space-mark   ?\u3000 [?\u25a1])                ; 全角スペースを□で表す
+    (tab-mark     ?\t     [?\u00BB ?\t] [?\\ ?\t])  ; tab - left quote mark
+    (newline-mark ?\n     [?\u21B5 ?\n] [?$ ?\n])   ; eol - overscore
+  ))
+(set-face-foreground 'whitespace-tab "#000000")
+(set-face-background 'whitespace-tab 'nil)
+(set-face-foreground 'whitespace-space "#000000")
+(set-face-background 'whitespace-space 'nil)
+(set-face-foreground 'whitespace-newline "#000000")
+(set-face-background 'whitespace-newline 'nil)
 
 ;; Disable to show the splash window at startup
 ;(setq inhibit-startup-screen t)
