@@ -41,6 +41,8 @@
 
 ;; 対応するカッコを強調
 ;(show-paren-mode 1)
+;; 対応するカッコを自動挿入
+(electric-pair-mode 1)
 
 ;; リージョンをハイライト
 ;(transient-mark-mode 1)
